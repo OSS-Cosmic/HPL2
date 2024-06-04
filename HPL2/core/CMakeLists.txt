@@ -246,13 +246,14 @@ else()
 endif()
 
 target_link_libraries(HPL2
-    OALWrapper # also pulls in ogg,vorbis,SDL
+  OALWrapper # also pulls in ogg,vorbis,SDL
   AngelScript
   Newton
   GLEW::GLEW
   ${OPENGL_gl_LIBRARY}
   ${OPENGL_glu_LIBRARY}
   ${THEORA_LIBRARY}
+  TheForge
   $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
   $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
   unofficial::theora::theora

@@ -77,8 +77,6 @@
 
 namespace hpl {
 
-	//-----------------------------------------------------------------------
-
 	// This is temporary, but works now. Used for sorting widgets Z-wise before sending input
 
 	static bool SortWidget_Z (const iWidget* apWidgetA, const iWidget* apWidgetB)
@@ -89,15 +87,6 @@ namespace hpl {
 		fBZ = ((iWidget*)apWidgetB)->GetGlobalPosition().z;
 		return (fAZ > fBZ);
 	}
-
-	//-----------------------------------------------------------------------
-	
-
-	//////////////////////////////////////////////////////////////////////////
-	// RENDER OBJECT
-	//////////////////////////////////////////////////////////////////////////
-
-	//-----------------------------------------------------------------------
 	
 	bool cGuiRenderObjectCompare::operator()(	const cGuiRenderObject& aObjectA, 
 												const cGuiRenderObject& aObjectB) const
@@ -139,12 +128,6 @@ namespace hpl {
 
 	}
 
-	//////////////////////////////////////////////////////////////////////////
-	// CLIP REGION
-	//////////////////////////////////////////////////////////////////////////
-	
-	//-----------------------------------------------------------------------
-
 	cGuiClipRegion::~cGuiClipRegion()
 	{
 		Clear();
@@ -177,14 +160,6 @@ namespace hpl {
 		return pRegion;
 	}
 
-	//-----------------------------------------------------------------------
-
-	//////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTORS
-	//////////////////////////////////////////////////////////////////////////
-
-	//-----------------------------------------------------------------------
-
 	cGuiGlobalShortcut::cGuiGlobalShortcut(int alKeyModifiers, eKey aKey, iWidget* apWidget, eGuiMessage aMessage, bool abBypassVisibility, bool abBypassEnabled)
 	{
 		mbEnabled = true;
@@ -196,8 +171,6 @@ namespace hpl {
 		mMessage = aMessage;
 	}
 
-	//-----------------------------------------------------------------------
-
 	bool cGuiGlobalShortcut::DoesAcceptKeyPress(const cKeyPress& aKey)
 	{
 		if(IsEnabled()==false ||
@@ -208,8 +181,6 @@ namespace hpl {
 		return true;
 	}
 
-	//-----------------------------------------------------------------------
-
 	bool cGuiGlobalShortcut::Exec()
 	{
 		if(mpWidget)
@@ -217,8 +188,6 @@ namespace hpl {
 
 		return false;
 	}
-
-	//-----------------------------------------------------------------------
 
 	tString cGuiGlobalShortcut::ToString()
 	{
@@ -247,14 +216,6 @@ namespace hpl {
 
 		return sText;
 	}
-
-	//-----------------------------------------------------------------------
-
-	//////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTORS
-	//////////////////////////////////////////////////////////////////////////
-
-	//-----------------------------------------------------------------------
 
 	cGuiSet::cGuiSet(	const tString &asName, cGui *apGui, cGuiSkin *apSkin, 
 						cResources *apResources, cGraphics* apGraphics,
@@ -355,14 +316,6 @@ namespace hpl {
 
 		ClearGlobalShortcuts();
 	}
-
-	//-----------------------------------------------------------------------
-
-	//////////////////////////////////////////////////////////////////////////
-	// PUBLIC METHODS
-	//////////////////////////////////////////////////////////////////////////
-
-	//-----------------------------------------------------------------------
 
 	void cGuiSet::Update(float afTimeStep)
 	{
@@ -2475,7 +2428,6 @@ namespace hpl {
 	}
 	kGuiCallbackDeclaredFuncEnd(cGuiSet,DrawFocus)
 
-	//-----------------------------------------------------------------------
 
 	cGuiGlobalShortcut* cGuiSet::FindShortcut(const cKeyPress& aKeyPress)
 	{
@@ -2490,7 +2442,6 @@ namespace hpl {
 		return NULL;
 	}
 
-	//-----------------------------------------------------------------------
 
 	void cGuiSet::UpdateToolTip(float afTimeStep)
 	{
@@ -2591,8 +2542,6 @@ namespace hpl {
 		}
 	}
 
-	//-----------------------------------------------------------------------
-
 	void cGuiSet::AddToTabOrder(iWidget* apWidget)
 	{
 		if(apWidget && find(mlstTabOrderWidgets.begin(), mlstTabOrderWidgets.end(), apWidget)==mlstTabOrderWidgets.end())
@@ -2610,8 +2559,6 @@ namespace hpl {
 		mpTabOrderWidget = NULL;
 	}
 
-	//-----------------------------------------------------------------------
-
 	void cGuiSet::SetDefaultFocusNavWidget(iWidget* apWidget, bool abCheckForValidity)
 	{
 		if(mpDefaultFocusNavWidget==apWidget) return;
@@ -2621,8 +2568,6 @@ namespace hpl {
 
 		mpDefaultFocusNavWidget = apWidget;
 	}
-
-	//-----------------------------------------------------------------------
 
 	void cGuiSet::PushDefaultFocusNavWidget()
 	{
