@@ -41,19 +41,17 @@ namespace hpl {
 
 	//--------------------------------
 
-	struct cWidgetCallback
-	{
-		cWidgetCallback(void *apObject, tGuiCallbackFunc apFunc)
-		{
-			mpObject = apObject;
-            mpFunc = apFunc;
-		}
+  struct cWidgetCallback {
+    cWidgetCallback(void *apObject, tGuiCallbackFunc apFunc) {
+      mpObject = apObject;
+      mpFunc = apFunc;
+    }
 
-		void *mpObject;
-		tGuiCallbackFunc mpFunc;
-	};
+    void *mpObject;
+    tGuiCallbackFunc mpFunc;
+  };
 
-	typedef std::list<cWidgetCallback> tWidgetCallbackList;
+  typedef std::list<cWidgetCallback> tWidgetCallbackList;
 	typedef tWidgetCallbackList::iterator tWidgetCallbackListIt;
 
 	//--------------------------------

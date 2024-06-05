@@ -51,7 +51,7 @@ jobs:
         run: |
           choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
       - name: Add msbuild to PATH
-        uses: microsoft/setup-msbuild@v1.1
+        uses: microsoft/setup-msbuild@v2
       - name: Configure
         run: |
           mkdir ${{ github.workspace }}\build && cd ${{ github.workspace }}\build
