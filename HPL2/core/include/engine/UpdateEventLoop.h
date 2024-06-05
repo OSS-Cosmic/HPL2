@@ -48,8 +48,7 @@ public:
   struct EventGroupBroadcast {
     ChangeGroupEvent m_enterEventGroup;
     ChangeGroupEvent m_leaveEventGroup;
-    std::array<UpdateEvent, static_cast<size_t>(BroadcastEvent::LastEnum)>
-        m_events;
+    std::array<UpdateEvent, static_cast<size_t>(BroadcastEvent::LastEnum)> m_events;
   };
 
   struct EventGroup {

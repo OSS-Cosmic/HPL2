@@ -52,7 +52,7 @@ namespace hpl {
     }
 
     void UpdateEventLoop::Broadcast(BroadcastEvent event, float value) {
-        //ASSERT(static_cast<size_t>(event) < m_events.size() && "Event out of range");
+        ASSERT(static_cast<size_t>(event) < m_events.size() && "Event out of range");
         m_events[static_cast<size_t>(event)].Signal(value);
         for (auto& group : m_eventGroups) {
             if (group.m_id == m_activeEventGroup) {
@@ -62,7 +62,7 @@ namespace hpl {
         }
     }
     void UpdateEventLoop::BroadcastToAll(BroadcastEvent event, float value) {
-        //ASSERT(static_cast<size_t>(event) < m_events.size() && "Event out of range");
+        ASSERT(static_cast<size_t>(event) < m_events.size() && "Event out of range");
         m_events[static_cast<size_t>(event)].Signal(value);
         for (auto& group : m_eventGroups) {
             group.m_broadcast->m_events[static_cast<size_t>(event)].Signal(value);
